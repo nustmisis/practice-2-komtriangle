@@ -42,3 +42,12 @@ bbbacacac, на это уйдёт 9 ходов, ниже указаны стро
 @author: workk
 """
 
+
+def count_offsets(source_str, symbol):
+    indexes = []
+
+    for idx, val in enumerate(source_str):
+        if val == symbol:
+            indexes.append(idx)
+
+    return sum(indexes) - len(indexes)

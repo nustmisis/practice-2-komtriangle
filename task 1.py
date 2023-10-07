@@ -23,5 +23,39 @@
 
 year = input()
 
+year_animal = {
+    0: "Обезьяна",
+    1: "Петух",
+    2: "Собака",
+    3: "Свинья",
+    4: "Крыса",
+    5: "Бык",
+    6: "Тигр",
+    7: "Кролик",
+    8: "Дракон",
+    9: "Змея",
+    10: "Лошадь",
+    11: "Коза"
+}
 
-print() #Животное
+
+def validate_year(year):
+    try:
+        int(year)
+    except ValueError:
+        print("Необходимо ввести число - год")
+        return False
+
+    if int(year) < 0:
+        print("Необходимо ввести год нашей эры")
+        return False
+
+    return True
+
+
+is_valid = validate_year(year)
+
+year = int(year)
+
+if is_valid:
+    print(year_animal[year % 12])
